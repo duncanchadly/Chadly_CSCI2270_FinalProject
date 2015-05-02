@@ -158,7 +158,7 @@ void HashTab::dispCode(){
     }
 
     cout << "return p;" << endl;
-    cin.get();
+    //cin.get();        //Unnecessary and prevents return to menu
 }
 
 /*
@@ -577,17 +577,26 @@ void HashTab::currentSpecs(){
     double tsizeD = tsize;
 
     //calculates the average table depth based on the sum of all depths and the total table size
-    if(used>0){
+    if(used > (tsizeD/2) || totwords > 10){         //Only calculate average depth when >half slots are filled or there are >10 words entered
         avgdep = sumdepD/tsizeD;
+        cout << "Hash function: " << hashfunc << endl;
+        cout << "Table size: " << tsize << endl;
+        cout << "Total words: " << totwords << endl;
+        cout << "Total collisions: " << col << endl;
+        cout << "Slots used: " << used << endl;
+        cout << "Max depth: " << maxdep << endl;
+        cout << "Average depth: " << avgdep << endl;
     }
-
-    cout << "Hash function: " << hashfunc << endl;
-    cout << "Table size: " << tsize << endl;
-    cout << "Total words: " << totwords << endl;
-    cout << "Total collisions: " << col << endl;
-    cout << "Slots used: " << used << endl;
-    cout << "Max depth: " << maxdep << endl;
-    cout << "Average depth: " << avgdep << endl;
+    else
+    {
+        cout << "Hash function: " << hashfunc << endl;
+        cout << "Table size: " << tsize << endl;
+        cout << "Total words: " << totwords << endl;
+        cout << "Total collisions: " << col << endl;
+        cout << "Slots used: " << used << endl;
+        cout << "Max depth: " << maxdep << endl;
+        cout << "Add more entries to determine average depth" << endl;
+    }
 }
 
 /*

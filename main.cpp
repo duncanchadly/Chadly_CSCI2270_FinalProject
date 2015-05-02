@@ -41,7 +41,7 @@ int main()
                 break;
 
             case 2://select hash function
-                cout << endl << "Enter desired hash function (1-10):"<<endl;
+                cout << endl << "Enter desired hash function (1-4):"<<endl; //Used to read 1-10, but only four pre-built hash functions are available
                 getline(cin,t,'\n');
                 h.selectHashFunction(stoi(t));
                 break;
