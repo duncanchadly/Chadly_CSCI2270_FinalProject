@@ -478,11 +478,8 @@ void HashTab::readFile(std::string filename){
     }
 
     string wrd;
-    while(!in_stream.eof()){//loops through all words in file
-
-        wrd = "";
-        getline(in_stream, wrd, ' ');
-
+    while(getline(in_stream,wrd,' '))
+{
         if(wrd != ""){
             int p;
             p = hashSum(wrd);//finds key for word read in
