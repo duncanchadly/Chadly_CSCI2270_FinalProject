@@ -158,7 +158,7 @@ void HashTab::dispCode(){
     }
 
     cout << "return p;" << endl;
-    cin.get();
+    //cin.get();        //Unnecessary and prevents return to menu
 }
 
 /*
